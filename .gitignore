@@ -1,15 +1,10 @@
-# Original WordPress backup and private/local source material
-/dws/
-/Brandbook/
-/tmp/
-/*.zip
-*.sql
-*.sql.gz
-*.wpress
-.env
-.env.*
-!.env.example
-node_modules/
-.DS_Store
-Thumbs.db
-*.log
+# Version only the files required to serve the website.
+/*
+!/.gitignore
+!/index.html
+!/styles.css
+!/app.js
+!/assets/
+!/Catalagos/
+**/.DS_Store
+**/Thumbs.db
