@@ -1,0 +1,15 @@
+# Original WordPress backup and private/local source material
+/dws/
+/Brandbook/
+/tmp/
+/*.zip
+*.sql
+*.sql.gz
+*.wpress
+.env
+.env.*
+!.env.example
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
