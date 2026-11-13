@@ -17,18 +17,19 @@ document.addEventListener('keydown', event => {
   }
 });
 const form = document.querySelector('#request-form');
-const line = document.querySelector('#request-line');
 const result = document.querySelector('#request-result');
 const summary = document.querySelector('#request-summary');
 const copyStatus = document.querySelector('#copy-status');
-document.querySelectorAll('[data-line]').forEach(link => {
-  link.addEventListener('click', () => {
-    line.value = link.dataset.line;
-    result.hidden = true;
-  });
-});
+const whatsappNumber = '5521965305624';
+function whatsappUrl(message) {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+function openWhatsApp(url) {
+  window.location.assign(url);
+}
 form.addEventListener('submit', event => {
   event.preventDefault();
+  if (!form.reportValidity()) return;
   const data = new FormData(form);
   summary.value = [
     'Olá, DWS! Gostaria de solicitar um orçamento.',
@@ -39,7 +40,9 @@ form.addEventListener('submit', event => {
   ].join('\n');
   copyStatus.textContent = '';
   result.hidden = false;
-  result.focus();
+  const url = whatsappUrl(summary.value);
+  document.querySelector('#whatsapp-continue').href = url;
+  openWhatsApp(url);
 });
 document.querySelector('.copy-button').addEventListener('click', async () => {
   try {
