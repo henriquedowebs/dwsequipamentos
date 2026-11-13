@@ -75,7 +75,7 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window) {
   }, { threshold: 0.06 });
   document.querySelectorAll('.product-grid, .segment-grid, .footer-main').forEach(group => {
     Array.from(group.children).forEach((child, index) => {
-      child.style.setProperty('--reveal-delay', `${(index % 3) * 75}ms`);
+      child.style.setProperty('--reveal-delay', `${(index % 3) * 40}ms`);
     });
   });
   revealTargets.forEach(element => {
@@ -87,7 +87,11 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window) {
   document.documentElement.classList.add('motion-ready');
 }
 document.addEventListener('focusin', event => {
-  event.target.closest('.motion-reveal')?.classList.add('is-visible');
+  const section = event.target.closest('.motion-reveal');
+  if (section) {
+    section.style.transition = 'none';
+    reveal(section);
+  }
 });
 reducedMotion.addEventListener('change', event => {
   if (event.matches) {
