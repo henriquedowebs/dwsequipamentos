@@ -20,9 +20,9 @@ const form = document.querySelector('#request-form');
 const result = document.querySelector('#request-result');
 const summary = document.querySelector('#request-summary');
 const copyStatus = document.querySelector('#copy-status');
-const whatsappNumber = '5521965305624';
+const whatsappEndpoint = 'https://tintim.link/whatsapp/1ec4d4e8-ebbb-450b-a565-7f957d468dba/5afafb10-a6eb-40c8-9ac7-45c1656ad059';
 function whatsappUrl(message) {
-  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return `${whatsappEndpoint}?text=${encodeURIComponent(message)}`;
 }
 function openWhatsApp(url) {
   window.location.assign(url);
