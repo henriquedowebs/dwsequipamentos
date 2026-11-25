@@ -58,7 +58,7 @@ document.querySelector('.copy-button').addEventListener('click', async () => {
 // Motion is progressive: without JS, every section remains visible.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const revealTargets = document.querySelectorAll(
-  '.section-heading, .product-card, .catalog-note, .about-copy, .about-photo, ' +
+  '.section-heading, .department-banner, .catalog-item, .about-copy, .about-photo, ' +
   '.specialties-inner > .eyebrow, .specialties-inner > h2, .specialties-inner > p, ' +
   '.segment, .catalogs > div, .request > div, #request-form, .faq-intro, .faq-list, .footer-main > div'
 );
@@ -73,9 +73,9 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window) {
       if (entry.isIntersecting) reveal(entry.target);
     });
   }, { threshold: 0.06 });
-  document.querySelectorAll('.product-grid, .segment-grid, .footer-main').forEach(group => {
+  document.querySelectorAll('.department-products, .segment-grid, .footer-main').forEach(group => {
     Array.from(group.children).forEach((child, index) => {
-      child.style.setProperty('--reveal-delay', `${(index % 3) * 40}ms`);
+      child.style.setProperty('--reveal-delay', `${(index % 5) * 30}ms`);
     });
   });
   revealTargets.forEach(element => {
