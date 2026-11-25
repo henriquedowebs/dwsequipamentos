@@ -204,3 +204,13 @@ footer{background:var(--green-deep);color:white;padding:56px var(--page-inset) 9
 @media(max-width:820px){.category-track a{min-height:68px;padding:12px 16px;font-size:14px}.category-track li{min-width:152px}}
 @media(max-width:760px){.category-strip{padding:0 0 0 var(--page-inset)}.category-track{padding-right:24px}.category-track a{min-height:64px}.category-track svg{width:24px;height:24px}.category-track .all-categories{min-width:160px}.category-track .all-categories a{padding-right:16px}}
 @media(prefers-reduced-motion:reduce){.category-track a{transition:none}}
+
+/* Catalogue invitation using the original DWS photo, without text baked into it. */
+.cta-more{position:relative;isolation:isolate;min-height:392px;display:flex;align-items:center;padding:64px var(--page-inset);color:white;background:var(--blue) url('assets/cta-produtos.webp') center 40%/cover no-repeat}
+.cta-more:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#002855fa 0%,#002855e8 35%,#00285580 64%,#00285512 100%)}
+.cta-more-content{max-width:660px}.cta-more .eyebrow{margin-bottom:20px;color:#b9e4a2}
+.cta-more h2{font-size:clamp(36px,4.3vw,60px);line-height:1.08;letter-spacing:-1.5px;margin-bottom:32px}.cta-more h2>span{color:#b9e4a2}
+.cta-more .button{min-width:196px;justify-content:space-between}
+@media(max-width:820px){.cta-more{min-height:360px;background-position:62% center;padding-top:56px;padding-bottom:56px}.cta-more:before{background:linear-gradient(90deg,#002855f5,#002855c0 55%,#00285550)}.cta-more h2{font-size:44px}}
+@media(max-width:760px){.cta-more{min-height:376px;padding-top:48px;padding-bottom:48px;background-position:68% center}.cta-more:before{background:linear-gradient(90deg,#002855ed,#002855ac 75%,#00285580)}.cta-more h2{font-size:38px;letter-spacing:-1px;max-width:340px}.cta-more .button{min-width:184px}}
+@media(max-width:360px){.cta-more h2{font-size:34px}.cta-more{min-height:352px}}
