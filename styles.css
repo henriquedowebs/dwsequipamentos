@@ -250,3 +250,43 @@ footer{background:var(--green-deep);color:white;padding:56px var(--page-inset) 9
 @media(max-width:480px){.department-banner{grid-template-columns:1fr;min-height:0;padding:24px;gap:16px}.department-banner-copy{max-width:100%}.department-banner h3{font-size:28px}.department-banner p{max-width:100%}.department-banner-visual{height:112px;justify-content:flex-end}.department-banner-visual>img{max-width:148px}.department-banner-visual .product-crop{max-width:148px}.department-banner:after{width:66%}}
 @media(max-width:360px){.department-products{grid-template-columns:1fr}.catalog-visual{height:176px}.catalog-item-content{padding:16px}.catalog-item-line{min-height:0}.catalog-item h4{min-height:0;font-size:18px}.catalog-order{min-height:48px}.department-banner{padding:24px 20px}}
 @media(prefers-reduced-motion:reduce){.catalog-item,.catalog-order{transition:none!important}}
+
+/* Hero: tr?s linhas do acervo, com hierarquia e enquadramento pr?prio. */
+.hero-visual{padding-left:24px}
+.hero-showcase{position:relative;width:100%;max-width:520px;display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:176px 176px;gap:14px;align-items:stretch;margin:0 0 28px}
+.hero-feature{min-width:0;margin:0;background:#fff;border:1px solid #dfe7df;border-radius:16px;padding:16px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 10px 30px #00285509}
+.hero-feature img{width:100%;height:116px;object-fit:contain;mix-blend-mode:multiply}
+.hero-feature figcaption{color:var(--blue);font-size:13px;line-height:1.4;margin-top:8px}
+.hero-feature figcaption strong{display:block;font-weight:600}
+.hero-feature figcaption>span{display:block;font-size:10px;letter-spacing:.7px;color:var(--green-text);margin-bottom:6px}
+.hero-feature--valves{grid-row:1 / 3;transform:translateY(20px);padding:22px}
+.hero-feature--valves img{height:auto;aspect-ratio:305 / 226}
+.hero-feature--valves figcaption{margin-top:24px;font-size:20px}
+.hero .product-caption{left:24px;bottom:32px}
+.motion-ready .hero-showcase{animation:dws-enter var(--entry) 120ms var(--motion-ease) both}
+/* White labels remain consistent in every green control and state. */
+.button,.button-white,.catalog-order,.whatsapp-float,
+.header .menu-toggle,.header .nav-cta,.header .nav-cta span,
+.header nav .nav-cta:hover,.header nav .nav-cta:focus-visible{color:#fff}
+@media(max-width:1100px) and (min-width:761px){
+ .hero-showcase{grid-template-rows:156px 156px;gap:10px}
+ .hero-feature{padding:12px}.hero-feature img{height:96px}
+ .hero-feature--valves{padding:16px}.hero-feature--valves img{height:auto}
+ .hero-feature figcaption{font-size:12px}.hero-feature--valves figcaption{font-size:18px}
+}
+@media(max-width:760px){
+ .hero-diagonal{clip-path:polygon(100% 54%,100% 100%,0 100%,0 70%)}
+ .hero-visual{padding:12px 0 76px;min-height:0;justify-content:center}
+ .hero-showcase{max-width:480px;grid-template-rows:156px 156px;gap:12px;margin:0}
+ .hero-feature{padding:12px}.hero-feature img{height:96px}
+ .hero-feature--valves{padding:16px;transform:translateY(12px)}
+ .hero-feature--valves img{height:auto}.hero-feature--valves figcaption{font-size:18px;margin-top:16px}
+ .hero .product-caption{left:0;right:0;bottom:20px}
+}
+@media(max-width:370px){
+ .hero-showcase{grid-template-columns:1.1fr 1fr;gap:8px;grid-template-rows:145px 145px}
+ .hero-feature{padding:10px;border-radius:12px}.hero-feature img{height:88px}
+ .hero-feature figcaption{font-size:12px}.hero-feature--valves figcaption{font-size:16px}
+ .hero-feature--valves img{height:auto}
+}
+@media(prefers-reduced-motion:reduce){.motion-ready .hero-showcase{animation:none}}
